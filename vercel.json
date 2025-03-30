@@ -20,6 +20,10 @@
         "dest": "/images/$1"
       },
       {
+        "src": "/script.js",
+        "dest": "/script.js"
+      },
+      {
         "src": "/styles.css",
         "dest": "/styles.css"
       }
