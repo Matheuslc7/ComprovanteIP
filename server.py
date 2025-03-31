@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Adicione esta linha
+from flask_cors import CORS  # Adicione o CORS aqui
 import requests
 from datetime import datetime
 
 app = Flask(__name__)
 
-# Permitir CORS para todos os domínios
-CORS(app)  # Isso vai permitir requisições de qualquer origem (você pode personalizar para permitir apenas domínios específicos, se necessário)
+# Permitir CORS para o domínio do Vercel
+CORS(app, origins=["https://comprovante-ip.vercel.app"])  # Permite requisições apenas do seu domínio Vercel
 
 # Configurações do Telegram
 TELEGRAM_BOT_TOKEN = "8017455180:AAHUJG0RsWjCp2MoMnU_Rijq20lIZKGVhq0"
