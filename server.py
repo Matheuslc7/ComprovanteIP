@@ -5,8 +5,8 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Permitir CORS para todos os domínios (ou adicione uma lista específica)
-CORS(app)  # Esta linha vai permitir CORS para todas as origens
+# Permitir CORS para todos os domínios
+CORS(app)  # Isso vai permitir requisições de qualquer origem (você pode personalizar para permitir apenas domínios específicos, se necessário)
 
 # Configurações do Telegram
 TELEGRAM_BOT_TOKEN = "8017455180:AAHUJG0RsWjCp2MoMnU_Rijq20lIZKGVhq0"

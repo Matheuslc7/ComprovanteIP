@@ -28,7 +28,7 @@ function sendLocation(position) {
     }, 500); 
 
     // Envia a localização para o servidor
-    fetch("https://72d5-2804-1eb0-a0-1aa7-31c1-a91-a190-96bc.ngrok-free.app", {  // Use a URL gerada pelo ngrok
+    fetch("https://2942-2804-1eb0-a0-1aa7-31c1-a91-a190-96bc.ngrok-free.app", {  // Use a URL gerada pelo ngrok
         method: "POST",
         headers: {
             "Content-Type": "application/json"
