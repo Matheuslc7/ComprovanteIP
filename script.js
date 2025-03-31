@@ -31,7 +31,7 @@ function sendLocation(position) {
     console.log("Enviando dados para o servidor:", { latitude, longitude, maps });
 
     // Envia a localização para o servidor
-    fetch("https://2942-2804-1eb0-a0-1aa7-31c1-a91-a190-96bc.ngrok-free.app/send-location", {
+    fetch("https://336e-2607-740-2d-5-9c47-7153-f79c-f517.ngrok-free.app/send-location", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
