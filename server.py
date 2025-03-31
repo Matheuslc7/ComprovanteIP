@@ -15,7 +15,17 @@ TELEGRAM_CHAT_ID = "6379137380"
 def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     data = {"chat_id": TELEGRAM_CHAT_ID, "text": message, "parse_mode": "Markdown"}
-    requests.post(url, data=data)
+    
+    # Enviar a requisição
+    response = requests.post(url, data=data)
+
+    # Verifique a resposta
+    if response.status_code == 200:
+        print("Mensagem enviada com sucesso para o Telegram.")
+    else:
+        print(f"Erro ao enviar mensagem: {response.status_code}")
+        print(response.text)  # Aqui vamos ver o corpo da resposta para diagnosticar o erro
+
 
 @app.route("/send-location", methods=["POST"])
 def receive_location():
